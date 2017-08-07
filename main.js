@@ -14,6 +14,7 @@ process.stdin.on('data', function (text) {
     }
 });
 
+
 function done() {
   process.exit();
 }
@@ -24,9 +25,26 @@ function initGame() {
   for(let i = 0; i < 9; i++) {
     arr[i] = '';
   }
+
+  return arr;
 }
 
-function drawBoard() {
+function drawBoard(arr) {
+  let count = 0, row = '';
+  arr.forEach(item => {
+    row += item + '| ';
+    count++;
 
-
+    if(count === 3) {
+      console.log(row + '\n');
+      count = 0;
+      row = '';
+    }
+  });
 }
+
+(function() {
+    console.log('this point is reached ');
+    drawBoard(initGame());
+
+})();
