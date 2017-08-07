@@ -18,3 +18,15 @@ function done() {
   process.exit();
 }
 
+function initGame() {
+  let arr = [];
+
+  for(let i = 0; i < 9; i++) {
+    arr[i] = '';
+  }
+}
+
+function drawBoard() {
+
+
+}
